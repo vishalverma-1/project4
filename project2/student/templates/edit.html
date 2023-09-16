@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%static 'pal1.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+  
+    <form action="" method="POST" class="center">
+        {% for x in data %}
+        {% csrf_token %}
+        <input type="text" name="name" value={{x.name}} ><br>
+        <input type="age" name="age" value={{x.age}} ><br>
+        <input type="email" name="email" value={{x.email}} ><br>
+        <input type="mobile" name="mobile" value={{x.mobile}}><br>
+        <input type="submit" value="update">
+        {% endfor %}
+    </form>
+</body>
+</html>
